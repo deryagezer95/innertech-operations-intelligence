@@ -1,0 +1,4 @@
+order_id,customer,product,quantity,delivery_date,status
+ORD-001,ABC Plastik,Ürün X,1000,2026-08-10,New
+ORD-002,Beta Makine,Ürün Y,500,2026-08-20,In Progress
+ORD-003,Gamma Dış Ticaret,Ürün Z,250,2026-08-05,Completed
