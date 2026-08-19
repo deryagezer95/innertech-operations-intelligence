@@ -2,3 +2,8 @@ order_id,customer,product,quantity,delivery_date,status
 ORD-001,ABC Plastik,Ürün X,1000,2026-08-10,New
 ORD-002,Beta Makine,Ürün Y,500,2026-08-20,In Progress
 ORD-003,Gamma Dış Ticaret,Ürün Z,250,2026-08-05,Completed
+ORD-004,Nova Packaging,Kraft Packaging Film,5000,2026-08-15,In Progress
+ORD-005,Atlas Manufacturing,Steel Parts,1200,2026-08-17,In Progress
+ORD-006,Nova Trade,Electronic Components,300,2026-08-12,In Progress
+ORD-007,Orion Logistics,Packaging Material,5000,2026-08-21,New
+ORD-008,Delta Industrial,Machine Parts,80,2026-09-15,New
