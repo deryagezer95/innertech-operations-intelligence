@@ -6,6 +6,7 @@ from delivery_engine import calculate_days_until_delivery
 
 orders = load_orders()
 upcoming_deliveries = 0
+high_priority = 0
 total_orders = len(orders)
 risks = find_delay_risks(orders)
 no_risk = total_orders - len(risks)
@@ -21,6 +22,8 @@ print("Upcoming Deliveries:", upcoming_deliveries)
 
 for order in risks:
     priority = calculate_priority(order)
+    if priority == "HIGH":
+       high_priority += 1
     days_late = calculate_delay(order)
     days_until_delivery = calculate_days_until_delivery(order)
 
@@ -32,3 +35,4 @@ for order in risks:
         "Priority:", priority ,
         "Days Late:", days_late
     )
+print("High Priority:", high_priority)
