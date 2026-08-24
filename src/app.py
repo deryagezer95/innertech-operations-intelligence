@@ -18,26 +18,14 @@ for order in orders:
     days_until_delivery = calculate_days_until_delivery(order)
     if 0 <= days_until_delivery <= 3:
         upcoming_deliveries += 1
+    priority = calculate_priority(order)
+    if priority.startswith("HIGH"):
+      high_priority += 1
+
 print("Upcoming Deliveries:", upcoming_deliveries)
 print("Operations:")
 for order in orders:
     priority = calculate_priority(order)
     days_until_delivery = calculate_days_until_delivery(order)
     print(order.order_id, "-", order.customer, "| Priority:", priority, "| Days Until Delivery:", days_until_delivery)
-
-for order in risks:
-    priority = calculate_priority(order)
-    if priority == "HIGH":
-       high_priority += 1
-    days_late = calculate_delay(order)
-    days_until_delivery = calculate_days_until_delivery(order)
-
-    print(
-        order.order_id,
-        "-",
-        order.customer,
-        "→ DELAY RISK",
-        "Priority:", priority ,
-        "Days Late:", days_late
-    )
 print("High Priority:", high_priority)
