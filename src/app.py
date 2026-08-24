@@ -19,6 +19,11 @@ for order in orders:
     if 0 <= days_until_delivery <= 3:
         upcoming_deliveries += 1
 print("Upcoming Deliveries:", upcoming_deliveries)
+print("Operations:")
+for order in orders:
+    priority = calculate_priority(order)
+    days_until_delivery = calculate_days_until_delivery(order)
+    print(order.order_id, "-", order.customer, "| Priority:", priority, "| Days Until Delivery:", days_until_delivery)
 
 for order in risks:
     priority = calculate_priority(order)
