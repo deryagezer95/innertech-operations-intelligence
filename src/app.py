@@ -4,8 +4,10 @@ from priority_engine import calculate_priority
 from priority_engine import calculate_delay
 from delivery_engine import calculate_days_until_delivery
 from decision_engine import calculate_decision
+from action_queue import build_action_queue
 
 orders = load_orders()
+immediate_actions, reviews, monitors, no_actions = build_action_queue(orders)
 upcoming_deliveries = 0
 high_priority = 0
 total_orders = len(orders)
@@ -31,3 +33,34 @@ for order in orders:
     days_until_delivery = calculate_days_until_delivery(order)
     print(order.order_id, "-", order.customer, "| Priority:", priority, "| Days Until Delivery:", days_until_delivery, "| Decision:", decision)
 print("High Priority:", high_priority)
+print("ACTION QUEUE")
+print("IMMEDIATE ACTION")
+for order in immediate_actions:
+    print(
+    order.order_id,
+    "-",
+    order.customer,
+    "| Days Late:",
+    -calculate_days_until_delivery(order)
+)
+print("REVIEW")
+for order in reviews:
+    print(
+    order.order_id,
+    "-",
+    order.customer,
+    "| Days Late:",
+    -calculate_days_until_delivery(order)
+)
+print("MONITOR")
+for order in monitors:
+    print(
+    order.order_id,
+    "-",
+    order.customer,
+    "|Days Until Delivery:",
+    calculate_days_until_delivery(order)
+)
+print("NO ACTION REQUIRED")
+for order in no_actions:
+    print(order.order_id, "-", order.customer)
