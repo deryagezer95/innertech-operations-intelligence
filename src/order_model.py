@@ -10,3 +10,4 @@ class Order:
     quantity: int
     delivery_date: date
     status: str
+    estimated_completion_date: date | None = None
